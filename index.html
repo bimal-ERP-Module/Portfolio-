@@ -19,9 +19,7 @@
       --radius: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -39,9 +37,7 @@
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     a:focus-visible,
     button:focus-visible {
@@ -49,9 +45,7 @@
       outline-offset: 5px;
     }
 
-    a:hover {
-      text-decoration-thickness: 2px;
-    }
+    a:hover { text-decoration-thickness: 2px; }
 
     ::selection {
       background: var(--lime);
@@ -72,9 +66,7 @@
       z-index: 30;
     }
 
-    .skip:focus {
-      top: 12px;
-    }
+    .skip:focus { top: 12px; }
 
     header {
       position: sticky;
@@ -104,9 +96,7 @@
       font-weight: 600;
     }
 
-    nav a:hover {
-      color: var(--green);
-    }
+    nav a:hover { color: var(--green); }
 
     .nav-contact {
       border: 1px solid var(--ink);
@@ -121,9 +111,7 @@
       background: var(--lime);
     }
 
-    nav a:not(.nav-contact) {
-      position: relative;
-    }
+    nav a:not(.nav-contact) { position: relative; }
 
     nav a:not(.nav-contact)::after {
       content: "";
@@ -141,9 +129,7 @@
       right: 0;
     }
 
-    nav a:not(.nav-contact).active {
-      color: var(--green);
-    }
+    nav a:not(.nav-contact).active { color: var(--green); }
 
     .hero {
       display: grid;
@@ -202,10 +188,7 @@
       background: var(--green);
       color: white;
       border: 1px solid var(--green);
-      transition:
-        transform 0.2s,
-        background 0.2s,
-        box-shadow 0.2s;
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
     }
 
     .button.secondary {
@@ -293,9 +276,7 @@
       transition: transform 0.25s;
     }
 
-    .portrait-link:hover img {
-      transform: scale(1.06);
-    }
+    .portrait-link:hover img { transform: scale(1.06); }
 
     .profile dl {
       display: grid;
@@ -370,16 +351,8 @@
       border-bottom: 1px solid var(--line);
     }
 
-    /* =====================================================================
-       Separate color per section (02 → 05).
-       Each .zone-* sets its own palette through CSS variables:
-         --zone-bg : full-width background band
-         --green   : accent color   --lime : highlight color
-         --line    : borders        --soft : soft tinted panels
-       ===================================================================== */
     .zone {
       background: var(--zone-bg);
-      /* extends the background edge-to-edge without changing layout */
       box-shadow: 0 0 0 100vmax var(--zone-bg);
       clip-path: inset(0 -100vmax);
     }
@@ -416,170 +389,6 @@
       --soft: #fde0e6;
     }
 
-    /* ---------- 02 / Recognition (amber) ---------- */
-    .zone-recognition .feedback-card {
-      border-color: var(--line);
-      border-top: 4px solid var(--green);
-      transition:
-        transform 0.25s,
-        box-shadow 0.25s,
-        border-color 0.25s;
-    }
-
-    .zone-recognition .feedback-card:nth-child(2) {
-      border-top-color: var(--green);
-    }
-
-    .zone-recognition .feedback-card:hover,
-    .zone-recognition .feedback-card:focus-within {
-      transform: translateY(-8px);
-      border-color: var(--green);
-      box-shadow: 0 18px 36px #b4530930;
-    }
-
-    .zone-recognition .thumb {
-      border-color: var(--line);
-      cursor: zoom-in;
-      transition: box-shadow 0.2s, border-color 0.2s;
-    }
-
-    .zone-recognition .thumb:hover {
-      box-shadow: 0 8px 22px #b4530926;
-    }
-
-    .zone-recognition .gallery-item figcaption::after {
-      content: " · Click to enlarge ↗";
-      color: var(--green);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    .zone-recognition .feedback-card:hover figcaption::after,
-    .zone-recognition .feedback-card:focus-within figcaption::after {
-      opacity: 1;
-    }
-
-    /* ---------- 03 / Experience (blue) ---------- */
-    .zone-experience .experience {
-      background: var(--soft);
-      border-left: 6px solid var(--green);
-    }
-
-    .zone-experience .experience .date {
-      display: inline-block;
-      background: var(--green);
-      color: #fff;
-      padding: 4px 14px;
-      border-radius: 999px;
-      margin: 0 0 8px;
-    }
-
-    .zone-experience .experience ul {
-      list-style: none;
-      padding: 0;
-      margin: 15px 0 0;
-    }
-
-    .zone-experience .experience li {
-      position: relative;
-      margin: 8px 0;
-      padding: 12px 16px 12px 42px;
-      border-radius: 12px;
-      transition:
-        transform 0.2s,
-        background 0.2s,
-        box-shadow 0.2s;
-    }
-
-    .zone-experience .experience li::before {
-      content: "▸";
-      position: absolute;
-      left: 16px;
-      top: 12px;
-      color: var(--green);
-      font-weight: 700;
-      transition: transform 0.2s;
-    }
-
-    .zone-experience .experience li:hover {
-      background: #fff;
-      transform: translateX(8px);
-      box-shadow: 0 8px 22px #1d4ed81f;
-    }
-
-    .zone-experience .experience li:hover::before {
-      transform: translateX(4px);
-    }
-
-    /* ---------- 04 / Skills (violet) ---------- */
-    .zone-skills .skills-list {
-      gap: 14px 18px;
-    }
-
-    .zone-skills .skills-list li {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 20px 56px 20px 24px;
-      cursor: pointer;
-      overflow: hidden;
-      transition:
-        transform 0.2s,
-        background 0.2s,
-        color 0.2s,
-        box-shadow 0.2s,
-        border-color 0.2s;
-    }
-
-    .zone-skills .skills-list li::before {
-      content: "→";
-      left: auto;
-      right: 22px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-      color: var(--green);
-      opacity: 0.45;
-      transition:
-        transform 0.2s,
-        opacity 0.2s,
-        color 0.2s;
-    }
-
-    .zone-skills .skills-list li:hover,
-    .zone-skills .skills-list li:focus-visible {
-      background: var(--green);
-      border-color: var(--green);
-      color: #fff;
-      transform: translateY(-4px);
-      box-shadow: 0 14px 28px #6d28d940;
-      outline: none;
-    }
-
-    .zone-skills .skills-list li:hover::before,
-    .zone-skills .skills-list li:focus-visible::before {
-      color: #fff;
-      opacity: 1;
-      transform: translate(6px, -50%);
-    }
-
-    .zone-skills .skills-list li:active {
-      transform: scale(0.98);
-    }
-
-    /* ---------- 05 / Education (rose) ---------- */
-    .zone-education .card {
-      border-top: 4px solid var(--green);
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-    }
-
-    .zone-education .card:hover {
-      transform: translateY(-6px);
-      border-color: var(--green);
-      box-shadow: 0 16px 32px #be123c24;
-    }
-    /* ===================================================================== */
-
     .section-head {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -595,9 +404,7 @@
       margin: 0;
     }
 
-    .section-head .eyebrow {
-      margin-bottom: 12px;
-    }
+    .section-head .eyebrow { margin-bottom: 12px; }
 
     .section-head p {
       color: var(--muted);
@@ -612,9 +419,7 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .card:hover {
-      box-shadow: 0 12px 30px #1725540d;
-    }
+    .card:hover { box-shadow: 0 12px 30px #1725540d; }
 
     .card h3 {
       font-size: 20px;
@@ -648,25 +453,11 @@
       gap: 24px;
     }
 
-    .project {
-      border-top: 4px solid var(--green);
-    }
-
-    .project h3 {
-      font-size: 26px;
-    }
-
-    .project > p {
-      max-width: 880px;
-    }
-
-    .project .eyebrow {
-      margin-bottom: 12px;
-    }
-
-    .project-link {
-      margin-top: 26px;
-    }
+    .project { border-top: 4px solid var(--green); }
+    .project h3 { font-size: 26px; }
+    .project > p { max-width: 880px; }
+    .project .eyebrow { margin-bottom: 12px; }
+    .project-link { margin-top: 26px; }
 
     .report-gallery {
       display: grid;
@@ -706,13 +497,8 @@
       transition: transform 0.2s;
     }
 
-    .thumb:hover {
-      border-color: var(--green);
-    }
-
-    .thumb:hover img {
-      transform: scale(1.04);
-    }
+    .thumb:hover { border-color: var(--green); }
+    .thumb:hover img { transform: scale(1.04); }
 
     .thumb:focus-visible {
       outline: 3px solid var(--green);
@@ -734,9 +520,7 @@
       color: var(--ink);
     }
 
-    .excel-link:hover {
-      background: #ccfbf1;
-    }
+    .excel-link:hover { background: #ccfbf1; }
 
     .file-icon {
       background: var(--ink);
@@ -785,13 +569,8 @@
       max-width: 900px;
     }
 
-    .erp-list li {
-      margin: 15px 0;
-    }
-
-    .erp-list strong {
-      color: var(--ink);
-    }
+    .erp-list li { margin: 15px 0; }
+    .erp-list strong { color: var(--ink); }
 
     .feedback-grid {
       display: grid;
@@ -805,13 +584,8 @@
       border-radius: 24px;
     }
 
-    .feedback-card:nth-child(2) {
-      border-top-color: var(--green);
-    }
-
-    .feedback-card:hover {
-      transform: translateY(-4px);
-    }
+    .feedback-card:nth-child(2) { border-top-color: var(--green); }
+    .feedback-card:hover { transform: translateY(-4px); }
 
     .feedback-card h3 {
       font-size: 18px;
@@ -823,12 +597,46 @@
       margin: 0 0 16px;
     }
 
-    .feedback-card .thumb {
-      height: 190px;
+    .feedback-card .thumb { height: 190px; }
+    .feedback-card .gallery-item figcaption { color: var(--muted); }
+
+    .zone-recognition .feedback-card {
+      border-color: var(--line);
+      border-top: 4px solid var(--green);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
     }
 
-    .feedback-card .gallery-item figcaption {
-      color: var(--muted);
+    .zone-recognition .feedback-card:nth-child(2) {
+      border-top-color: var(--green);
+    }
+
+    .zone-recognition .feedback-card:hover,
+    .zone-recognition .feedback-card:focus-within {
+      transform: translateY(-8px);
+      border-color: var(--green);
+      box-shadow: 0 18px 36px #b4530930;
+    }
+
+    .zone-recognition .thumb {
+      border-color: var(--line);
+      cursor: zoom-in;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .zone-recognition .thumb:hover {
+      box-shadow: 0 8px 22px #b4530926;
+    }
+
+    .zone-recognition .gallery-item figcaption::after {
+      content: " · Click to enlarge ↗";
+      color: var(--green);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .zone-recognition .feedback-card:hover figcaption::after,
+    .zone-recognition .feedback-card:focus-within figcaption::after {
+      opacity: 1;
     }
 
     .experience {
@@ -858,8 +666,54 @@
       color: var(--muted);
     }
 
-    .experience li {
-      margin: 9px 0;
+    .experience li { margin: 9px 0; }
+
+    .zone-experience .experience {
+      background: var(--soft);
+      border-left: 6px solid var(--green);
+    }
+
+    .zone-experience .experience .date {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin: 0 0 8px;
+    }
+
+    .zone-experience .experience ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0 0;
+    }
+
+    .zone-experience .experience li {
+      position: relative;
+      margin: 8px 0;
+      padding: 12px 16px 12px 42px;
+      border-radius: 12px;
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+
+    .zone-experience .experience li::before {
+      content: "▸";
+      position: absolute;
+      left: 16px;
+      top: 12px;
+      color: var(--green);
+      font-weight: 700;
+      transition: transform 0.2s;
+    }
+
+    .zone-experience .experience li:hover {
+      background: #fff;
+      transform: translateX(8px);
+      box-shadow: 0 8px 22px #1d4ed81f;
+    }
+
+    .zone-experience .experience li:hover::before {
+      transform: translateX(4px);
     }
 
     .skills-list {
@@ -888,18 +742,71 @@
       top: 11px;
     }
 
+    .zone-skills .skills-list { gap: 14px 18px; }
+
+    .zone-skills .skills-list li {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px 56px 20px 24px;
+      overflow: hidden;
+      transition:
+        transform 0.2s,
+        background 0.2s,
+        color 0.2s,
+        box-shadow 0.2s,
+        border-color 0.2s;
+    }
+
+    .zone-skills .skills-list li::before {
+      content: "→";
+      left: auto;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: var(--green);
+      opacity: 0.45;
+      transition: transform 0.2s, opacity 0.2s, color 0.2s;
+    }
+
+    .zone-skills .skills-list li:hover,
+    .zone-skills .skills-list li:focus-visible {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px #6d28d940;
+      outline: none;
+    }
+
+    .zone-skills .skills-list li:hover::before,
+    .zone-skills .skills-list li:focus-visible::before {
+      color: #fff;
+      opacity: 1;
+      transform: translate(6px, -50%);
+    }
+
+    .zone-skills .skills-list li:active { transform: scale(0.98); }
+
     .education {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
 
-    .education .card h3 {
-      font-size: 18px;
+    .education .card h3 { font-size: 18px; }
+    .education .card p { margin-bottom: 0; }
+
+    .zone-education .card {
+      border-top: 4px solid var(--green);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
     }
 
-    .education .card p {
-      margin-bottom: 0;
+    .zone-education .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--green);
+      box-shadow: 0 16px 32px #be123c24;
     }
 
     .certificate {
@@ -927,9 +834,7 @@
       margin: 0 0 18px;
     }
 
-    .contact .eyebrow {
-      color: var(--lime);
-    }
+    .contact .eyebrow { color: var(--lime); }
 
     .contact p {
       color: #d1dbea;
@@ -955,9 +860,7 @@
       color: var(--lime);
     }
 
-    .contact-links a:hover {
-      color: var(--lime);
-    }
+    .contact-links a:hover { color: var(--lime); }
 
     footer {
       padding: 0 0 30px;
@@ -978,9 +881,7 @@
       color: var(--ink);
     }
 
-    dialog::backdrop {
-      background: rgba(0, 0, 0, 0.8);
-    }
+    dialog::backdrop { background: rgba(0, 0, 0, 0.8); }
 
     .viewer-top {
       display: flex;
@@ -1059,41 +960,24 @@
       pointer-events: auto;
     }
 
-    #back-to-top:hover {
-      background: var(--green);
-    }
+    #back-to-top:hover { background: var(--green); }
 
     @keyframes riseIn {
       from {
         opacity: 0;
         transform: translateY(14px);
       }
-
       to {
         opacity: 1;
         transform: none;
       }
     }
 
-    .hero h1 {
-      animation: riseIn 0.55s ease both;
-    }
-
-    .hero .role-title {
-      animation: riseIn 0.55s ease 0.08s both;
-    }
-
-    .hero .intro {
-      animation: riseIn 0.55s ease 0.16s both;
-    }
-
-    .hero .actions {
-      animation: riseIn 0.55s ease 0.24s both;
-    }
-
-    .hero .profile {
-      animation: riseIn 0.6s ease 0.2s backwards;
-    }
+    .hero h1 { animation: riseIn 0.55s ease both; }
+    .hero .role-title { animation: riseIn 0.55s ease 0.08s both; }
+    .hero .intro { animation: riseIn 0.55s ease 0.16s both; }
+    .hero .actions { animation: riseIn 0.55s ease 0.24s both; }
+    .hero .profile { animation: riseIn 0.6s ease 0.2s backwards; }
 
     @media (max-width: 850px) {
       .hero {
@@ -1101,48 +985,28 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .profile {
-        padding: 24px;
-      }
-
-      .profile-actions {
-        grid-template-columns: 1fr;
-      }
+      .profile { padding: 24px; }
+      .profile-actions { grid-template-columns: 1fr; }
 
       .experience {
         grid-template-columns: 1fr;
         gap: 12px;
       }
 
-      nav {
-        gap: 15px;
-      }
-
-      .contact {
-        padding: 32px;
-      }
+      nav { gap: 15px; }
+      .contact { padding: 32px; }
 
       .report-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .feedback-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .feedback-card .thumb {
-        height: 200px;
-      }
+      .feedback-grid { grid-template-columns: 1fr; }
+      .feedback-card .thumb { height: 200px; }
     }
 
     @media (max-width: 620px) {
-      html {
-        scroll-padding-top: 135px;
-      }
-
-      .wrap {
-        width: calc(100% - 32px);
-      }
+      html { scroll-padding-top: 135px; }
+      .wrap { width: calc(100% - 32px); }
 
       .nav {
         min-height: 76px;
@@ -1158,13 +1022,8 @@
         gap: 10px;
       }
 
-      nav a {
-        font-size: 12px;
-      }
-
-      .nav-contact {
-        padding: 5px 10px;
-      }
+      nav a { font-size: 12px; }
+      .nav-contact { padding: 5px 10px; }
 
       .hero {
         grid-template-columns: 1fr;
@@ -1172,22 +1031,15 @@
         gap: 35px;
       }
 
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .role-title {
-        font-size: 18px;
-      }
+      .hero h1 { letter-spacing: -2px; }
+      .role-title { font-size: 18px; }
 
       .profile {
         border-radius: 32px;
         padding: 26px;
       }
 
-      .profile-actions {
-        grid-template-columns: 1fr 1fr;
-      }
+      .profile-actions { grid-template-columns: 1fr 1fr; }
 
       .section-head,
       .education,
@@ -1201,30 +1053,17 @@
         font-size: 32px;
       }
 
-      section {
-        padding: 50px 0;
-      }
+      section { padding: 50px 0; }
 
       .contact {
         margin: 45px 0;
         padding: 26px;
       }
 
-      .card {
-        padding: 24px;
-      }
-
-      .project h3 {
-        font-size: 23px;
-      }
-
-      .skills-list {
-        grid-template-columns: 1fr;
-      }
-
-      .thumb {
-        height: 125px;
-      }
+      .card { padding: 24px; }
+      .project h3 { font-size: 23px; }
+      .skills-list { grid-template-columns: 1fr; }
+      .thumb { height: 125px; }
 
       footer {
         flex-direction: column;
@@ -1240,9 +1079,7 @@
     }
 
     @media (max-width: 370px) {
-      .report-gallery {
-        grid-template-columns: 1fr;
-      }
+      .report-gallery { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1259,8 +1096,11 @@
       .button:hover,
       .feedback-card:hover,
       .zone-recognition .feedback-card:hover,
+      .zone-recognition .feedback-card:focus-within,
       .zone-experience .experience li:hover,
       .zone-skills .skills-list li:hover,
+      .zone-skills .skills-list li:focus-visible,
+      .zone-skills .skills-list li:active,
       .zone-education .card:hover,
       .portrait-link:hover img,
       .thumb:hover img {
@@ -1277,9 +1117,7 @@
         display: none;
       }
 
-      body {
-        background: white;
-      }
+      body { background: white; }
 
       .hero,
       section {
@@ -1291,9 +1129,7 @@
         clip-path: none;
       }
 
-      .contact {
-        margin: 20px 0;
-      }
+      .contact { margin: 20px 0; }
 
       .card,
       .experience,
@@ -1524,11 +1360,11 @@
           <div class="project-link">
             <a
               class="button"
-              href="https://github.com/bimal-agg-ERP?tab=repositories"
+              href="https://bimal-erp-module.github.io/Representing_Module/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View all ERP projects on GitHub
+              View all ERP modules
               <span aria-hidden="true">↗</span>
             </a>
           </div>
@@ -1744,8 +1580,6 @@
 
   <script>
     /*
-      Portfolio image links.
-      Both GitHub blob links and raw.githubusercontent.com links work.
       Keep filenames and capitalization exactly as they appear on GitHub.
     */
 
@@ -1965,7 +1799,6 @@
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // Reading progress and back-to-top button.
     const scrollProgress = document.getElementById("scroll-progress");
     const backToTop = document.getElementById("back-to-top");
     const motionPreference = window.matchMedia(
@@ -1998,7 +1831,6 @@
       });
     });
 
-    // Highlight navigation links as their sections enter the viewport.
     const navLinks = document.querySelectorAll(
       'nav a[href^="#"]:not(.nav-contact)'
     );
